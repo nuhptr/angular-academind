@@ -1,6 +1,14 @@
-import { Component, computed, input, Input, signal } from '@angular/core';
+import {
+   Component,
+   computed,
+   EventEmitter,
+   input,
+   Input,
+   Output,
+   signal,
+} from '@angular/core';
 
-import { DUMMY_USERS } from '../../constant/data';
+type userProps = { id: string; avatar: string; name: string };
 
 @Component({
    selector: 'app-user',
@@ -9,19 +17,18 @@ import { DUMMY_USERS } from '../../constant/data';
    styleUrl: './user.component.css',
 })
 export class UserComponent {
-   // @Input({ required: true }) avatar!: string; // required
-   // @Input() name!: string; // required
+   @Input({ required: true }) user?: userProps;
+   @Output() select = new EventEmitter<string>();
 
-   avatar = input.required<string>();
-   name = input.required<string>();
+   // usign input signal
+   // avatar = input.required<string>();
+   // name = input.required<string>();
 
    imagePath = computed(() => {
-      return `assets/${this.avatar()}`;
+      return `assets/${this.user?.avatar}`;
    });
 
-   // get imagePath() {
-   // return 'assets/' + this.selectedUser().avatar;
-   // }
-
-   onSelectUser() {}
+   onSelectUser() {
+      this.select.emit(this.user?.id);
+   }
 }
