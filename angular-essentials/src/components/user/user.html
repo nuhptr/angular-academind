@@ -1,11 +1,15 @@
 <div class="rounded-[6px] shadow-[0_1px_6px_rgba(0,0,0,0.1)] overflow-hidden">
   <button
     class="flex items-center gap-2 px-2 py-1.5 bg-[#433352] text-[#c3b3d1] border-none cursor-pointer w-full min-w-[160px] text-left hover:bg-[#9965dd] hover:text-[#150722] active:bg-[#9965dd] active:text-[#150722]"
+    (click)="onSelectUser()"
   >
+    <!--TODO: YOU CAN BINDING DATA USING 2 WAY
+    FIRST: USING STRING INTERPOLAR {{ }}
+    SECOND: USING ATTRIBUTE BINDING [] -->
     <img
       class="w-[32px] object-contain rounded-[50%] shadow-[0_1px_8px_rgba(0,0,0,0.3)]"
-      [src]="'assets/users/' + selectedUsers.avatar"
-      alt="user-images"
+      [src]="imagePath"
+      [alt]="selectedUsers.name"
     />
     <span class="text-sm font-normal">
       {{ selectedUsers.name }}
