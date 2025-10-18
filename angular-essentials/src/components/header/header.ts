@@ -1,0 +1,9 @@
+import { Component } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
+
+@Component({
+  selector: 'app-header-component',
+  templateUrl: './header.html',
+  imports: [],
+})
+export class HeaderComponent {}
