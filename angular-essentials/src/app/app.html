@@ -1,1 +1,11 @@
-<h1 class="text-3xl font-bold underline">Hello world!</h1>
+<app-header-component></app-header-component>
+
+<main
+  class="w-[90%] max-w-[50rem] my-10 mx-auto grid auto-rows-auto gap-8 md:my-16 md:grid-cols-[1fr_3fr]"
+>
+  <ul id="users">
+    <li class="list-none m-0 p-0 flex gap-2 overflow-auto md:flex-col">
+      <app-user-components></app-user-components>
+    </li>
+  </ul>
+</main>
