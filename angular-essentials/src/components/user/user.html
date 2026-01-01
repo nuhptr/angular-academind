@@ -8,11 +8,11 @@
     SECOND: USING ATTRIBUTE BINDING [] -->
     <img
       class="w-[32px] object-contain rounded-[50%] shadow-[0_1px_8px_rgba(0,0,0,0.3)]"
-      [src]="imagePath"
-      [alt]="selectedUsers.name"
+      [src]="imagePath()"
+      [alt]="selectedUsers().name"
     />
     <span class="text-sm font-normal">
-      {{ selectedUsers.name }}
+      {{ selectedUsers().name }}
     </span>
   </button>
 </div>
